@@ -1,0 +1,9 @@
+{
+  "name": "pilav",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:birs-rs/pilav.git",
+  "author": "Artur Bier <izatop@gmail.com>",
+  "license": "MIT",
+  "packageManager": "yarn@4.5.0"
+}
