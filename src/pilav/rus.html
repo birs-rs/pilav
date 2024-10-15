@@ -1,25 +1,43 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="ru">
+<html dir="ltr" lang="sr">
   <head>
     <meta charset="utf-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1"
     />
-    <title>Bir's Pilav / Меню</title>
+    <title>Bir's Pilav / Meni</title>
     <style>
         body {
             margin: 0;
             padding: 0;
             background-color: transparent;
         }
+
+        img, embed { display: none; }
+
         embed {
             width: 100%;
             height: 100vh;
             border: none;
         }
+
+        img {
+            width: auto;
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto;
+        }
     </style>
-  <body>
-    <embed src="menu/white_rus.pdf" type="application/pdf" />
-  </body>
+    <body>
+        <img id="fallback" src="menu/white_rus.png">
+        <embed id="viewer" src="menu/white_rus.pdf" type="application/pdf"/>
+        <script>
+            const supports = [...navigator.plugins].some((s) => "application/pdf" in s);
+            const viewer = document.querySelector('#viewer');
+            const fallback = document.querySelector('#fallback');
+            const target = supports ? viewer : fallback;
+            target.style.display = "block";
+        </script>
+    </body>
 </html>
