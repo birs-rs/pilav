@@ -11,6 +11,9 @@
         body {
             margin: 0;
             padding: 0;
+            width: 100%;
+            height: 100vh;
+            display: flex;
             background-color: transparent;
         }
 
@@ -33,10 +36,10 @@
         <img id="fallback" src="menu/white_srb.png">
         <embed id="viewer" src="menu/white_srb.pdf" type="application/pdf"/>
         <script>
-            const supports = [...navigator.plugins].some((s) => "application/pdf" in s);
+            const hasPDFViewer = [...navigator.plugins].some((s) => "application/pdf" in s);
             const viewer = document.querySelector('#viewer');
             const fallback = document.querySelector('#fallback');
-            const target = supports ? viewer : fallback;
+            const target = hasPDFViewer ? viewer : fallback;
             target.style.display = "block";
         </script>
     </body>
