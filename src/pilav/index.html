@@ -12,17 +12,9 @@
             margin: 0;
             padding: 0;
             width: 100%;
-            height: 100vh;
+            height: auto;
             display: flex;
             background-color: transparent;
-        }
-
-        img, embed { display: none; }
-
-        embed {
-            width: 100%;
-            height: 100vh;
-            border: none;
         }
 
         img {
@@ -33,14 +25,6 @@
         }
     </style>
     <body>
-        <img id="fallback" src="menu/white_srb.png">
-        <embed id="viewer" src="menu/white_srb.pdf" type="application/pdf"/>
-        <script>
-            const hasPDFViewer = [...navigator.plugins].some((s) => "application/pdf" in s);
-            const viewer = document.querySelector('#viewer');
-            const fallback = document.querySelector('#fallback');
-            const target = hasPDFViewer ? viewer : fallback;
-            target.style.display = "block";
-        </script>
+        <img src="menu/white_srb.png">
     </body>
 </html>
