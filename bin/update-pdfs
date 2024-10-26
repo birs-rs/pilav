@@ -1,0 +1,16 @@
+#!/bin/sh
+
+set -ax
+
+pdf2png() {
+    FILE="${1}"
+    OUTFILE="${FILE%.pdf}.png"
+
+    set -ax
+    rm -f "${OUTFILE}"
+    magick -density 300 "${FILE}" -trim -append "${OUTFILE}"
+}
+
+export -f pdf2png
+
+find src -name '*.pdf' -exec bash -c 'pdf2png "${0}"' {} \;
