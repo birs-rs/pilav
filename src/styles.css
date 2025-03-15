@@ -97,7 +97,12 @@
        font-weight: 800;
        font-size: 26px;
    }
-
+   .bottom_address {
+    font-size: 22px;
+    display: block;
+    padding-top: 27px;
+    color: #fff;
+   }
 
    /* Адаптивные стили для мобильных устройств */
    @media (max-width: 600px) {
